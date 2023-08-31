@@ -38,7 +38,7 @@ router.put('/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-    })
+    });
 
     if(!categoryData) {
       res.status(404).json({message: 'This is not the category you are looking for.'});
