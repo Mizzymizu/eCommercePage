@@ -130,14 +130,14 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
   try {
-    const categoryData = await Category.destroy({
+    const productData = await Product.destroy({
       where: {
         id: req.params.id
       }
-    })
+    });
 
-    if (!categoryData) {
-      res.status(404).json({ message: 'Looks like your product is at another castle.'})
+    if (!productData) {
+      res.status(404).json({message: 'Looks like your product is at another castle.'})
     }
   } catch (err) {
     res.status(500).json(err);
